@@ -1,5 +1,5 @@
 import os
-name_of_file = 'C:\\Python 39\\2\\data.txt'
+name_of_file = 'C:\\Python 39\\python2\\python2\\data.txt'
 import random
 
 def Sequence(filename):
@@ -42,7 +42,10 @@ def Sequence(filename):
                     d=d+1       # один разь уже пересекает
                     t=1 # флаг
                     X = random.uniform(a[i][0], a[i+1][0]) #координаты это точки
-                    Y = (-(a[i][0]*a[i+1][1]-a[i+1][0]*a[i][1])-(a[i][1]-a[i+1][1])*X)/(a[i+1][0]-a[i][0])
+                    if (a[i+1][0]-a[i][0])==0:
+                        Y = random.uniform(a[i][1], a[i+1][1])
+                    else:
+                        Y = (-(a[i][0]*a[i+1][1]-a[i+1][0]*a[i][1])-(a[i][1]-a[i+1][1])*X)/(a[i+1][0]-a[i][0])
                     if (a[i][1]-a[i+1][1])*x+(a[i+1][0]-a[i][0])*y+(a[i][0]*a[i+1][1]-a[i+1][0]*a[i][1])==0.0:  # если наша точка лежит на первой прямой
                          f = 1
                          z = 1
